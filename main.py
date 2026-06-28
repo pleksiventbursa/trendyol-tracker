@@ -57,7 +57,7 @@ def trendyol_scrape(url: str) -> dict:
     ScraperAPI ile 403 engeli aşılır.
     """
     try:
-        response = scraper_get(url, render_js=True)
+        response = scraper_get(url, render_js=False)
         soup = BeautifulSoup(response.text, "html.parser")
 
         sonuc = {
@@ -162,7 +162,7 @@ def trendyol_scrape(url: str) -> dict:
 def buybox_analiz(kategori_url: str) -> dict:
     """Kategori sayfasında fırsat tarar"""
     try:
-        response = scraper_get(kategori_url, render_js=True)
+        response = scraper_get(kategori_url, render_js=False)
         soup = BeautifulSoup(response.text, "html.parser")
 
         firsatlar = []
